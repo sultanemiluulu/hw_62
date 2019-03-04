@@ -15,7 +15,8 @@ class Movie(models.Model):
     poster = models.ImageField(upload_to='posters', null=True, blank=True)
     release_date = models.DateField()
     finish_date = models.DateField(null=True, blank=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='movies', verbose_name="Category", null=True)
+    category = models.ManyToManyField(Category, related_name='movies',
+                                      verbose_name="Category")
 
     def __str__(self):
         return self.name
@@ -23,6 +24,9 @@ class Movie(models.Model):
 
 class Hall(models.Model):
     name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
 
 
 class Seat(models.Model):
@@ -33,7 +37,7 @@ class Seat(models.Model):
 
 class Show(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='shows', verbose_name="Show")
-    hall = models.ForeignKey(Hall, on_delete=models.CASCADE, related_name='shows', verbose_name="Hall")
+    hall = models.ForeignKey(Hall, on_delete=models.CASCADE, related_name='hshows', verbose_name="Hall")
     start_time = models.DateTimeField()
     finish_time = models.DateTimeField()
     price = models.DecimalField(max_digits=5, decimal_places=2)

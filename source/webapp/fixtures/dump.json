@@ -1,0 +1,640 @@
+[
+{
+  "model": "webapp.category",
+  "pk": 2,
+  "fields": {
+    "name": "Fantasy",
+    "description": "Fantasy is a genre of speculative fiction set in a fictional universe, often without any locations, events, or people referencing the real world. Its roots are in oral traditions, which then became literature and drama. From the twentieth century it has expanded further into various media, including film, television, graphic novels and video games."
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 4,
+  "fields": {
+    "name": "Science Fiction",
+    "description": "Science fiction (often shortened to Sci-Fi or SF) is a genre of speculative fiction, typically dealing with imaginative concepts such as advanced science and technology, space exploration, time travel, and extraterrestrial life. Science fiction often explores the potential consequences of scientific and other innovations, and has been called a \"literature of ideas\"."
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 5,
+  "fields": {
+    "name": "Superheroes",
+    "description": "Superhero fiction is a genre of speculative fiction examining the adventures, personalities and ethics of costumed crime fighters known as superheroes, who often possess superhuman powers and battle similarly powered criminals known as supervillains. The genre primarily falls between hard fantasy and soft science fiction spectrum of scientific realism. Superhero fiction originated from the cultural intermingling of Japan and United States literature. It is most commonly associated with American comic books, though it has expanded into other media through adaptations and original works."
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 6,
+  "fields": {
+    "name": "Comedy",
+    "description": "Comedy is a genre of film in which the main emphasis is on humour. These films are designed to make the audience laugh through amusement and most often work by exaggerating characteristics for humorous effect.[1] Films in this style traditionally have a happy ending (black comedy being an exception). One of the oldest genres in film, some of the very first silent movies were comedies, as slapstick comedy often relies on visual depictions, without requiring sound. When sound films became more prevalent during the 1920s, comedy films took another swing, as laughter could result from burlesque situations but also dialogue."
+  }
+},
+{
+  "model": "webapp.movie",
+  "pk": 2,
+  "fields": {
+    "name": "Avengers: Infinity War",
+    "description": "Avengers: Infinity War is a 2018 American superhero film based on the Marvel Comics superhero team the Avengers, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. It is the sequel to 2012's The Avengers and 2015's Avengers: Age of Ultron, and the nineteenth film in the Marvel Cinematic Universe (MCU). The film is directed by Anthony and Joe Russo, written by Christopher Markus and Stephen McFeely, and features an ensemble cast including Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans, Scarlett Johansson, Benedict Cumberbatch, Don Cheadle, Tom Holland, Chadwick Boseman, Paul Bettany, Elizabeth Olsen, Anthony Mackie, Sebastian Stan, Danai Gurira, Letitia Wright, Dave Bautista, Zoe Saldana, Josh Brolin, and Chris Pratt. In the film, the Avengers and the Guardians of the Galaxy attempt to stop Thanos from amassing the all-powerful Infinity Stones.",
+    "poster": "posters/avengers.jpg",
+    "release_date": "2018-04-23",
+    "finish_date": "2018-08-02",
+    "category": []
+  }
+},
+{
+  "model": "webapp.movie",
+  "pk": 3,
+  "fields": {
+    "name": "The Internship",
+    "description": "The Internship is a 2013 American comedy film directed by Shawn Levy, written by Vince Vaughn and Jared Stern, and produced by Vaughn and Levy. The film stars Vince Vaughn and Owen Wilson as recently laid-off salesmen who attempt to compete with much younger and more technically skilled applicants for a job at Google. Rose Byrne, Max Minghella, Aasif Mandvi, Josh Brener, Dylan O'Brien, Tobit Raphael, Tiya Sircar, Josh Gad, and Jessica Szohr also star.\r\n\r\nThe Internship is the second film with Vaughn and Wilson in the lead roles, after the 2005 film Wedding Crashers; the two had also both appeared in the 2004 film Starsky & Hutch. This is also the second collaboration of Levy, Vaughn, and Stern after the 2012 film The Watch, and the third of Levy and Wilson after the first two Night at the Museum films.\r\n\r\nReleased on June 7, 2013, the film received mixed reviews from critics and grossed $93 million worldwide.",
+    "poster": "posters/internship.jpg",
+    "release_date": "2013-06-07",
+    "finish_date": "2013-10-22",
+    "category": [
+      6
+    ]
+  }
+},
+{
+  "model": "webapp.hall",
+  "pk": 1,
+  "fields": {
+    "name": "IMAX"
+  }
+},
+{
+  "model": "webapp.hall",
+  "pk": 2,
+  "fields": {
+    "name": "Beeline Hall"
+  }
+},
+{
+  "model": "webapp.seat",
+  "pk": 1,
+  "fields": {
+    "hall": 1,
+    "row": 15,
+    "seat": 12
+  }
+},
+{
+  "model": "webapp.show",
+  "pk": 1,
+  "fields": {
+    "movie": 2,
+    "hall": 2,
+    "start_time": "2018-05-06T21:00:00Z",
+    "finish_time": "2018-05-06T23:50:00Z",
+    "price": "300.00"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add movie",
+    "content_type": [
+      "webapp",
+      "movie"
+    ],
+    "codename": "add_movie"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change movie",
+    "content_type": [
+      "webapp",
+      "movie"
+    ],
+    "codename": "change_movie"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete movie",
+    "content_type": [
+      "webapp",
+      "movie"
+    ],
+    "codename": "delete_movie"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view movie",
+    "content_type": [
+      "webapp",
+      "movie"
+    ],
+    "codename": "view_movie"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add show",
+    "content_type": [
+      "webapp",
+      "show"
+    ],
+    "codename": "add_show"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change show",
+    "content_type": [
+      "webapp",
+      "show"
+    ],
+    "codename": "change_show"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete show",
+    "content_type": [
+      "webapp",
+      "show"
+    ],
+    "codename": "delete_show"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view show",
+    "content_type": [
+      "webapp",
+      "show"
+    ],
+    "codename": "view_show"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add hall",
+    "content_type": [
+      "webapp",
+      "hall"
+    ],
+    "codename": "add_hall"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change hall",
+    "content_type": [
+      "webapp",
+      "hall"
+    ],
+    "codename": "change_hall"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete hall",
+    "content_type": [
+      "webapp",
+      "hall"
+    ],
+    "codename": "delete_hall"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view hall",
+    "content_type": [
+      "webapp",
+      "hall"
+    ],
+    "codename": "view_hall"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add seat",
+    "content_type": [
+      "webapp",
+      "seat"
+    ],
+    "codename": "add_seat"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change seat",
+    "content_type": [
+      "webapp",
+      "seat"
+    ],
+    "codename": "change_seat"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete seat",
+    "content_type": [
+      "webapp",
+      "seat"
+    ],
+    "codename": "delete_seat"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view seat",
+    "content_type": [
+      "webapp",
+      "seat"
+    ],
+    "codename": "view_seat"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add category",
+    "content_type": [
+      "webapp",
+      "category"
+    ],
+    "codename": "add_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change category",
+    "content_type": [
+      "webapp",
+      "category"
+    ],
+    "codename": "change_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete category",
+    "content_type": [
+      "webapp",
+      "category"
+    ],
+    "codename": "delete_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view category",
+    "content_type": [
+      "webapp",
+      "category"
+    ],
+    "codename": "view_category"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$120000$aUgmK13vtJnN$7BsD/cj/7/czF0m1E3RZbFpqWNURi8QiJ7hXtwYnEO4=",
+    "last_login": "2019-03-03T07:43:37.025Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-02-28T18:34:40.676Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

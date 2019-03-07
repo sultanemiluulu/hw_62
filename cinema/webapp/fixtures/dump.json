@@ -88,6 +88,30 @@
   }
 },
 {
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "webapp",
+    "model": "booking"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "webapp",
+    "model": "discount"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "webapp",
+    "model": "ticket"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "3qmjrbe7aaxhk6jgwqz1mwp82dtq7xsi",
   "fields": {
@@ -144,6 +168,7 @@
     "poster": "posters/snowden.jpg",
     "release_date": "2016-07-21",
     "finish_date": "2016-11-01",
+    "is_deleted": false,
     "category": [
       2
     ]
@@ -158,6 +183,7 @@
     "poster": "posters/avengers.jpg",
     "release_date": "2012-04-14",
     "finish_date": "2012-09-14",
+    "is_deleted": false,
     "category": [
       3,
       4
@@ -216,6 +242,51 @@
     "start_time": "2019-03-12T12:20:40Z",
     "finish_time": "2019-03-12T14:20:00Z",
     "price": "400.00"
+  }
+},
+{
+  "model": "webapp.discount",
+  "pk": 1,
+  "fields": {
+    "name": "New Year 2019",
+    "discount": "20.50",
+    "start_date": null,
+    "finish_date": null
+  }
+},
+{
+  "model": "webapp.discount",
+  "pk": 2,
+  "fields": {
+    "name": "8 March Female Day",
+    "discount": "0.01",
+    "start_date": null,
+    "finish_date": null
+  }
+},
+{
+  "model": "webapp.ticket",
+  "pk": 1,
+  "fields": {
+    "show": 2,
+    "seat": 1,
+    "discount": 1,
+    "refund": false
+  }
+},
+{
+  "model": "webapp.booking",
+  "pk": 1,
+  "fields": {
+    "code": "603677",
+    "show": 1,
+    "status": "sold",
+    "created_date": "2019-03-07",
+    "updated_date": "2019-03-07",
+    "seats": [
+      1,
+      2
+    ]
   }
 },
 {
@@ -747,6 +818,150 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add booking",
+    "content_type": [
+      "webapp",
+      "booking"
+    ],
+    "codename": "add_booking"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change booking",
+    "content_type": [
+      "webapp",
+      "booking"
+    ],
+    "codename": "change_booking"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete booking",
+    "content_type": [
+      "webapp",
+      "booking"
+    ],
+    "codename": "delete_booking"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view booking",
+    "content_type": [
+      "webapp",
+      "booking"
+    ],
+    "codename": "view_booking"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add discount",
+    "content_type": [
+      "webapp",
+      "discount"
+    ],
+    "codename": "add_discount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change discount",
+    "content_type": [
+      "webapp",
+      "discount"
+    ],
+    "codename": "change_discount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete discount",
+    "content_type": [
+      "webapp",
+      "discount"
+    ],
+    "codename": "delete_discount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view discount",
+    "content_type": [
+      "webapp",
+      "discount"
+    ],
+    "codename": "view_discount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add ticket",
+    "content_type": [
+      "webapp",
+      "ticket"
+    ],
+    "codename": "add_ticket"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change ticket",
+    "content_type": [
+      "webapp",
+      "ticket"
+    ],
+    "codename": "change_ticket"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete ticket",
+    "content_type": [
+      "webapp",
+      "ticket"
+    ],
+    "codename": "delete_ticket"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view ticket",
+    "content_type": [
+      "webapp",
+      "ticket"
+    ],
+    "codename": "view_ticket"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
@@ -868,6 +1083,78 @@
     ],
     "object_id": "2",
     "object_repr": "Seat object (2)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2019-03-07T10:01:19.225Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "webapp",
+      "discount"
+    ],
+    "object_id": "1",
+    "object_repr": "Discount object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2019-03-07T10:01:54.749Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "webapp",
+      "discount"
+    ],
+    "object_id": "2",
+    "object_repr": "Discount object (2)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2019-03-07T10:02:27.405Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "webapp",
+      "ticket"
+    ],
+    "object_id": "1",
+    "object_repr": "Ticket object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2019-03-07T10:06:37.698Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "webapp",
+      "booking"
+    ],
+    "object_id": "1",
+    "object_repr": "Snowden, Beeline Hall (05.03.2019 12:20 - 05.03.2019 13:50), 603677",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }

@@ -29,7 +29,8 @@ class MovieSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
-        fields = ('url', 'id', 'name', 'description', 'poster', 'release_date', 'finish_date', 'category', 'category_ids')
+        fields = ('url', 'id', 'name', 'description', 'poster', 'release_date', 'finish_date', 'category',
+                  'category_ids')
 
 
 class InlineSeatSerializer(serializers.ModelSerializer):

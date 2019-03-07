@@ -1,4 +1,4 @@
-from webapp.models import Movie, Category, Hall, Seat, Show
+from webapp.models import Movie, Category, Hall, Seat, Show, Discount, Ticket, Booking
 from rest_framework import serializers
 
 
@@ -65,4 +65,49 @@ class ShowSerializer(serializers.ModelSerializer):
     class Meta:
         model = Show
         fields = ('url', 'id', 'movie', 'hall', 'start_time', 'finish_time', 'price',  'movie_url', 'hall_url')
+
+
+class InlineShowSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Show
+        fields = ('id', 'movie', 'hall', 'start_time', 'finish_time', 'price')
+
+
+class InlineDiscountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Discount
+        fields = ('id', 'name', 'discount', 'start_date', 'finish_date')
+
+
+class TicketSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='api_v1:ticket-detail')
+    show = InlineShowSerializer(read_only=True)
+    seat = InlineSeatSerializer(read_only=True)
+    show_url = serializers.HyperlinkedRelatedField(view_name='api_v1:show-detail', source='show', read_only=True)
+    discount_url = serializers.HyperlinkedRelatedField(view_name='api_v1:discount-detail', source='discount', read_only=True)
+    discount = InlineDiscountSerializer(read_only=True)
+
+    class Meta:
+        model = Ticket
+        fields = ('url', 'id', 'show', 'show_url', 'seat', 'discount', 'discount_url', 'refund')
+
+
+class DiscountSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='api_v1:discount-detail')
+
+    class Meta:
+        model = Discount
+        fields = ('url', 'id', 'name', 'discount', 'start_date', 'finish_date')
+
+
+class BookingSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='api_v1:booking-detail')
+    show = InlineShowSerializer(read_only=True)
+    seats = InlineSeatSerializer(many=True, read_only=True)
+    show_url = serializers.HyperlinkedRelatedField(view_name='api_v1:show-detail', source='show', read_only=True)
+
+    class Meta:
+        model = Booking
+        fields = ('url', 'id', 'code', 'show', 'show_url', 'seats', 'status', 'created_date', 'updated_date')
+
 

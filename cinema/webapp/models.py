@@ -82,6 +82,9 @@ class Discount(models.Model):
     start_date = models.DateField(null=True, blank=True)
     finish_date = models.DateField(null=True, blank=True)
 
+    def __str__(self):
+        return "%s: %s%s" % (self.name, self.discount, '%')
+
 
 class Ticket(models.Model):
     show = models.ForeignKey(Show, on_delete=models.PROTECT, related_name='ticket', verbose_name="Show")
@@ -107,8 +110,8 @@ BOOKING_STATUS_CHOICES = [
 
 class Booking(models.Model):
     code = models.CharField(max_length=10, unique_for_date='created_date', default=generate_code, editable=False)
-    show = models.ForeignKey(Show, on_delete=models.PROTECT, related_name='booking', verbose_name="Show")
-    seats = models.ManyToManyField(Seat, related_name='booking', blank=True)
+    show = models.ForeignKey(Show, on_delete=models.PROTECT, related_name='bookings', verbose_name="Show")
+    seats = models.ManyToManyField(Seat, related_name='seats', blank=True)
     status = models.CharField(max_length=255, choices=BOOKING_STATUS_CHOICES, default='created', verbose_name="Status")
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
